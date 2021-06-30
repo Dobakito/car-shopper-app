@@ -5,15 +5,13 @@
 
     <title></title>
 
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <%= stylesheet_link_tag "main" %>
   </head>
   <body>
     <div class="wrapper">
-      <a><%= link_to "New Car", new_car_path %></a>
+      <a><%= link_to "New Car", new_car_path %> | <%= link_to "New Test Drive", new_test_drive_path %> | <%= link_to "Logout", logout_path %></a>
 
         <%= yield %>
 

@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   end
   resources :test_drives, as: 'test_drive'
   resources :users, only: [:show, :new, :create]
-
-  resources :sessions
+  resources :catagories, only: [:show, :new, :create]
 
   root 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'session#destroy'
+
 end
