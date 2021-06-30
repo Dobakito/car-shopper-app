@@ -1,0 +1,7 @@
+<%= simple_form_for @test_drive do |f| %>
+  <%= f.association :cars %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :rating %>
+  <%= f.button :submit %>
+<% end %>
