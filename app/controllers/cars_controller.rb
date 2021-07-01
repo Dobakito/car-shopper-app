@@ -18,7 +18,12 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-
+    @car.user_id = session[:user_id]
+    if @car.save
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
   end
 
 
@@ -38,6 +43,6 @@ class CarsController < ApplicationController
     end
 
     def car_params
-      params.require(:car).permit(:name, :price)
+      params.require(:car).permit(:name, :price, :category_id)
     end
 end
