@@ -33,8 +33,8 @@ class CarsController < ApplicationController
 
 
   def destroy
+    set_car
     @car.destroy
-
   end
 
   private
@@ -43,6 +43,6 @@ class CarsController < ApplicationController
     end
 
     def car_params
-      params.require(:car).permit(:name, :price, :category_id)
+      params.require(:car).permit(:name, :price, :category_id, :image)
     end
 end

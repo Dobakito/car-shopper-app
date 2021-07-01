@@ -1,5 +1,12 @@
-<%= @user.cars.each do |car| %>
-  <%= car.name %>
-  <%= car.price %>
-  <%= link_to "View Car", car_path(car) %>
+<% @user.cars.map do |car| %>
+    <%= image_tag(car.image, style:"width:400px")%>
+  <br>
+  <br>
+    <%= car.name %>
+  <br>
+  <br>
+    <%="$#{car.price}"%>
+  <br>
+  <br>
+    <strong><%= link_to "View Car", car %>
 <%end%>

@@ -1,6 +1,11 @@
 <%= simple_form_for @car do |f| %>
   <%= f.input :name %>
+  <br>
   <%= f.input :price %>
+  <br>
   <%= f.association :category %>
+  <br>
+  <%= f.input :image %>
+  <br>
   <%= f.button :submit %>
 <% end %>
