@@ -1,5 +1,5 @@
 <%= simple_form_for @test_drive do |f| %>
-  <%= f.association :cars %>
+  <%= f.association :cars, collection: Car.all.order(:name), prompt: "Select a Car to test drive."%>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :rating %>

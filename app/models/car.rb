@@ -6,5 +6,5 @@ class Car < ApplicationRecord
 
   validates :name, presence: true
   validates :price, presence: true
-  validates :not_a_duplicate
+  # validates :not_a_duplicate
 end

@@ -1,4 +1,8 @@
-
-
-
-<%= link_to 'Back', user_path(@user) %>
+<h2><%=@user.username%>'s page</h2>
+<br>
+<br>
+<h3>Your Cars</h3>
+<br>
+  <ul>
+    <li><%= render 'show_cars' %></li>
+  </ul>

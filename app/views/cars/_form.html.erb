@@ -1,3 +1,6 @@
 <%= simple_form_for @car do |f| %>
-  <%=  %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.association :category %>
+  <%= f.button :submit %>
 <% end %>

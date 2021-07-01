@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%= stylesheet_link_tag "main" %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <a><%= link_to "New Car", new_car_path %> | <%= link_to "New Test Drive", new_test_drive_path %> | <%= link_to "Logout", logout_path %></a>
+
+        <%= yield %>
+
+      <footer class="branding">
+        <small>&copy; 2021 <strong>Car Shopper</strong></small>
+      </footer>
+    </div>
+  </body>
+</html>

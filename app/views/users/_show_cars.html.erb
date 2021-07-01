@@ -1,0 +1,5 @@
+<%= @user.cars.each do |car| %>
+  <%= car.name %>
+  <%= car.price %>
+  <%= link_to "View Car", car_path(car) %>
+<%end%>

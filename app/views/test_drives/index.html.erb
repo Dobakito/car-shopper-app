@@ -10,11 +10,9 @@
   </thead>
 
   <tbody>
-    <% @test_drives.each do |test_drife| %>
+    <% @test_drives.each do |test_drive| %>
       <tr>
-        <td><%= link_to 'Show', test_drife %></td>
-        <td><%= link_to 'Edit', edit_test_drife_path(test_drife) %></td>
-        <td><%= link_to 'Destroy', test_drife, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', test_drive_path %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +20,4 @@
 
 <br>
 
-<%= link_to 'New Test Drife', new_test_drife_path %>
+<%= link_to 'New Test Drive', new_test_drive_path %>
