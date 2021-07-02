@@ -12,8 +12,9 @@ class TestDrivesController < ApplicationController
 
 
   def new
-    if @car = Car.find(params[:car_id])
-      @test_drive = car.test_drive.build
+    if params[:car_id]
+      car = Car.find(params[:car_id])
+      @test_drive = car.test_drives.build
     else
       @test_drive = TestDrive.new
     end

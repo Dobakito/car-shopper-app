@@ -1,10 +1,10 @@
 <%= simple_form_for @test_drive do |f| %>
   <br>
-  <%= f.association :car %>
+  <%= f.association :car, label_method: :name, value_method: :id %>
   <br>
   <%= f.input :title %>
   <br>
-  <%= f.input :description %>
+  <%= f.input :description, as: :text %>
   <br>
   <%= f.input :rating, in: 1..5 %>
   <br>

@@ -14,8 +14,9 @@
       <tr>
         <td><%= car.name %></td>
         <br>
-        <td><%= image_tag(@car.image, style: "width:400px") %></td>
+        <td><%= image_tag(car.image, style: "width:400px") %></td>
         <br>
+        <td>$<%= car.price %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit Car', edit_car_path(car) %></td>
       </tr>

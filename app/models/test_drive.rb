@@ -5,5 +5,5 @@ class TestDrive < ApplicationRecord
   validates :title, :description, presence: true
   validates :rating, presence: {only_integer: true, in: 1...5}
 
-  validates :shop, uniqueness: {scope: :user, message: "You've already tested this car."}
+  validates :car, uniqueness: {scope: :user, message: "You've already tested this car."}
 end
