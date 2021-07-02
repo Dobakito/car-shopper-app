@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create] do
     resources :test_drives, only: [:index]
   end
-  resources :catagories, only: [:show, :new, :create]
+  resources :catagories
 
   root 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
+  get '/auth/google_oauth2/callback' => 'sessions#google_create'
 end

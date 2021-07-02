@@ -11,13 +11,15 @@
   </head>
   <body>
     <div class="wrapper">
-      <a><%= link_to "New Car", new_car_path %> | <%= link_to "View All Cars", cars_path %> | <%= link_to "New Test Drive", new_test_drive_path %> | <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-                                                                                                                                                          <input type=submit value='logout'>
-                                                                                                                                                          <% end %></a>
+      <a><%= link_to "New Car", new_car_path %> | <%= link_to "View All Cars", cars_path %> | <%= link_to "New Test Drive", new_test_drive_path %> | <%= link_to "View Profile", user_path(session[:user_id]) %><a/>
 
         <%= yield %>
 
       <footer class="branding">
+        <a><%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+        <input type=submit value='logout'>
+        <% end %></a>
+        <br>
         <small>&copy; 2021 <strong>Car Shopper</strong></small>
       </footer>
     </div>
