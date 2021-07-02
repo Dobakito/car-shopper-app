@@ -1,7 +1,12 @@
 <%= simple_form_for @test_drive do |f| %>
-  <%= f.association :cars, collection: Car.all.order(:name), prompt: "Select a Car to test drive."%>
+  <br>
+  <%= f.association :car %>
+  <br>
   <%= f.input :title %>
+  <br>
   <%= f.input :description %>
-  <%= f.input :rating %>
-  <%= f.button :submit %>
+  <br>
+  <%= f.input :rating, in: 1..5 %>
+  <br>
+  <%= f.submit %>
 <% end %>

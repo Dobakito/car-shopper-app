@@ -1,7 +1,14 @@
-<h3><%= @car.name %></h3>
-<br>
 <%= image_tag(@car.image, style: "width:400px") %>
 <br>
 <br>
 <h4>$<%= @car.price %></h4>
 <br>
+<br>
+<% @car.test_drives.each do |t| %>
+<h3><%= t.title %></h3>
+<br>
+<p><%= t.description %></p>
+<br>
+<h4><%= t.rating %></h4>
+<br>
+<% end %>
