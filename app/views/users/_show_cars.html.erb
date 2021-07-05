@@ -1,12 +1,10 @@
 <% @user.cars.map do |car| %>
-    <%= image_tag(car.image, style:"width:400px")%>
-  <br>
-  <br>
-    <%= car.name %>
-  <br>
-  <br>
-    <%="$#{car.price}"%>
-  <br>
-  <br>
-    <strong><%= link_to "View Car", car %>
+  <div class="row">
+    <div class="col s4">
+      <h5><%= car.name %></h5>
+      <p><%= image_tag(car.image, :class => "responsive-img")%></p>
+      <p><%="$#{car.price}"%></p>
+      <p><%= link_to "View Car", car %></p>
+    </div>
 <%end%>
+</div>

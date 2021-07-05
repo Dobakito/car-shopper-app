@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
 
   def show
     set_user
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      # flash[:errors] = @user.errors.full_messages
+      flash[:errors] = @user.errors.full_messages
       render :new
     end
   end

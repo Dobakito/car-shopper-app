@@ -1,10 +1,5 @@
 class TestDrivesController < ApplicationController
-  before_action :set_test_drive, only: %i[ show update destroy ]
-
-  def index
-    @test_drives = TestDrive.all
-  end
-
+  before_action :set_test_drive, only: %i[ show destroy ]
 
   def show
     set_test_drive
