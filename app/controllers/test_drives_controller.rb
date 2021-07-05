@@ -1,5 +1,6 @@
 class TestDrivesController < ApplicationController
-  before_action :set_test_drive, only: %i[ show update destroy ]
+  before_action :set_test_drive, only: %i[ show update ]
+  before_action :redirect_if_not_logged_in
 
   def index
     @test_drives = TestDrive.all

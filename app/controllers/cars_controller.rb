@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
-
+  before_action :redirect_if_not_logged_in
+  
   def index
     if params[:id]
       @cars = Car.sort_by_high_rating
