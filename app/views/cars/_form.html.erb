@@ -1,7 +1,10 @@
 <%= simple_form_for @car do |f| %>
   <%= f.input :name %>
+  <br>
   <%= f.input :price %>
-  <div class="input-field col s12"><%= f.association :category, as: :check_boxes %></div>
+  <br>
+  <%= f.association :category %>
+  <br>
   <%= f.input :image %>
   <br>
   <%= f.button :submit %>

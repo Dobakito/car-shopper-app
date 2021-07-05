@@ -1,38 +1,28 @@
 <!DOCTYPE html>
-<head>
-  <title>Car Shopperr</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <link href="https://fonts.googleapis.com/icon?family=Material\Icons" rel="stylesheet">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%= stylesheet_link_tag "main" %>
+  </head>
   <body>
-    <nav>
-      <div class="nav-wrapper blue">
-        <a class="brand-logo center">Car Shopper</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><h5><%= link_to "New Car", new_car_path %></h5></li>
-          <li><h5><%= link_to "View All Cars", cars_path %></h5></li>
-          <li><h5><%= link_to "View Profile", user_path(session[:user_id]) %></h5></li>
-          <li><h6><%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-          <input type=submit value='logout'>
-          <% end %></h6></li>
-        </ul>
-      </div>
-    </nav>
-  </body>
-  <main>
-    <div class="container">
+    <div class="wrapper">
+      <a><%= link_to "New Car", new_car_path %> | <%= link_to "View All Cars", cars_path %> | <%= link_to "New Test Drive", new_test_drive_path %></a>
+
 
         <%= yield %>
 
       <footer class="branding">
-
+        <a><%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+        <input type=submit value='logout'>
+        <% end %></a>
         <br>
         <small>&copy; 2021 <strong>Car Shopper</strong></small>
       </footer>
     </div>
-  </main>
+  </body>
 </html>
