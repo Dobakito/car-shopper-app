@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Cars</h1>
+<br>
+  <%= link_to 'Order by Test Drive Rating', cars_path %>
 <ul>
     <% @cars.each do |car| %>
+    <div class="list">
         <h3><%= car.name %></h3>
         <br>
         <li><%= image_tag(car.image, style: "width:400px") %></li>
@@ -13,6 +14,7 @@
         <li><%= link_to 'Edit Car', edit_car_path(car) %></li>
         <br>
         <br>
+    </div>
     <% end %>
 </ul>
 

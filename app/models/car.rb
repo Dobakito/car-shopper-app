@@ -9,4 +9,5 @@ class Car < ApplicationRecord
   validates :name, presence: true, :uniqueness => true
   validates :price, presence: true
 
+  scope :sort_by_high_rating, -> {left_joins(:test_drives).group(:id).order('avg(rating).desc')}
 end

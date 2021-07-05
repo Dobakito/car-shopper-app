@@ -13,13 +13,14 @@
 
 
   body {
-    background-color: #c0effa;
+    background-color: #000080;
     color: #000;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
   .wrapper {
+    text-align: center;
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -49,6 +50,10 @@
 
   p {
     margin-bottom: 18px;
+  }
+
+  .list {
+    border: 2px solid #ccc;
   }
 
   .main {

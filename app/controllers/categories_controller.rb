@@ -6,16 +6,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find_by(:name params[:name])
+    @category = Category.find_by(id: params[:id])
   end
 
-  def new
-    @category = Category.new
-  end
-
-  def create
-    @category = Category.create(category_params)
-  end
 
   private
 

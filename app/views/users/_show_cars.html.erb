@@ -1,12 +1,18 @@
 <% @user.cars.map do |car| %>
-    <%= image_tag(car.image, style:"width:400px")%>
+<div class="list">
+  <br>
+    <h4><%= car.name %></h4>
   <br>
   <br>
-    <%= car.name %>
+    <%= image_tag(car.image, width: 400, class: 'd-block mx-auto')%>
   <br>
   <br>
-    <%="$#{car.price}"%>
+    <h5><%="$#{car.price}"%></h5>
   <br>
   <br>
     <strong><%= link_to "View Car", car %>
+      <br>
+      <br>
+      <br>
+  </div>
 <%end%>

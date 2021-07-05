@@ -2,6 +2,7 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
 
   def index
+    byebug
     @cars = Car.all
   end
 
