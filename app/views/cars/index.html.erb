@@ -1,12 +1,11 @@
 <h1>Cars</h1>
-<br>
-  <%= link_to 'Order by Test Drive Rating', cars_path %>
+
 <ul>
-    <% @cars.each do |car| %>
+    <% @cars.map do |car| %>
     <div class="list">
         <h3><%= car.name %></h3>
         <br>
-        <li><%= image_tag(car.image, style: "width:400px") %></li>
+        <li><%= image_tag(car.image, width: 400) %></li>
         <br>
         <h4>$<%= car.price %></h4>
         <br>
@@ -19,3 +18,4 @@
 </ul>
 
 <br>
+<%= link_to 'Order by Test Drive Rating', cars_order_by_rating_path %>

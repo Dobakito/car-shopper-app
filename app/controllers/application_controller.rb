@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def redirect_if_not_logged_in
     redirect_to login_path if !logged_in?
   end
+
+  def able_to_edit?(car)
+    car.user == current_user
+  end
 end

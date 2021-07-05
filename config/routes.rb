@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/cars_order_by_rating' => 'cars#index'
+  
   resources :cars do
     resources :test_drives
   end
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
   end
   resources :categories
 
-  get '/cars/order_by_rating' => 'cars#index'
+  get '/cars_order_by_rating' => 'cars#index'
   root 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

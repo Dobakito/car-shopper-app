@@ -2,8 +2,11 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
 
   def index
-    byebug
-    @cars = Car.all
+    if params[:id]
+      @cars = Car.sort_by_high_rating
+    else
+      @cars = Car.all
+    end
   end
 
   def show
@@ -15,6 +18,11 @@ class CarsController < ApplicationController
   end
 
   def edit
+    if able_to_edit?(@car)
+      render :edit
+    else
+      redirect_to @car
+    end
   end
 
   def create
@@ -29,7 +37,11 @@ class CarsController < ApplicationController
 
 
   def update
-
+    if @car.update(car_params)
+      redirect_to @car
+    else
+      render :edit
+    end
   end
 
 
