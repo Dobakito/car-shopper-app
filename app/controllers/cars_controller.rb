@@ -1,13 +1,19 @@
 class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
   before_action :redirect_if_not_logged_in
-  
+
   def index
-    if params[:id]
-      @cars = Car.sort_by_high_rating
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @cars = user.cars
     else
       @cars = Car.all
-    end
+    end 
+  end
+
+  def order
+    @cars = Car.sort_by_high_rating.includes(:test_drives)
+    render :index
   end
 
   def show

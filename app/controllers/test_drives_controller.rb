@@ -3,7 +3,12 @@ class TestDrivesController < ApplicationController
   before_action :redirect_if_not_logged_in
 
   def index
-    @test_drives = TestDrive.all
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @test_drives = user.test_drives
+    else
+      @test_drives = TestDrive.all
+    end
   end
 
 

@@ -8,6 +8,9 @@ class Car < ApplicationRecord
 
   validates :name, presence: true, :uniqueness => true
   validates :price, presence: true
+  validates :image, presence: true
 
-  scope :sort_by_high_rating, -> {left_joins(:test_drives).group(:id).order('avg(rating).desc')}
+  scope :sort_by_high_rating, -> {joins(:test_drives).group(:id).order('avg(rating) desc')}
+
+  scope :most_test_drives, -> {joins(:test_drives).group(:id).select('cars.id, count(test_drives.id) as count').order('max(test_drives.id) desc')}
 end

@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
-  get '/cars_order_by_rating' => 'cars#index'
-  
+
   resources :cars do
-    resources :test_drives
+    resources :test_drives, shallow: true
   end
 
-  resources :test_drives
+  get '/cars_order_by_rating' => 'cars#order'
+
+  resources :test_drives, only: [:new]
 
   resources :users, only: [:show, :new, :create] do
-    resources :test_drives, only: [:index]
+    resources :cars, only: [:index]
   end
+
   resources :categories
 
-  get '/cars_order_by_rating' => 'cars#index'
   root 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
